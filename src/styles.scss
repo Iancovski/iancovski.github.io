@@ -1,0 +1,35 @@
+@use 'reset';
+@use 'theme';
+@use 'mixin';
+
+* {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: 600;
+  color: theme.$primary-color;
+  width: max-content;
+  padding-bottom: 1rem;
+
+  @include mixin.text-gradient-stroke;
+}
+
+h1.secondary {
+  color: theme.$secondary-color;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  width: max-content;
+
+  @include mixin.text-gradient;
+}
+
+h3 {
+  font-size: 1.5rem;
+}

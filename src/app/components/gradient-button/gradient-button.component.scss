@@ -1,0 +1,28 @@
+@use '../../../mixin' as mixin;
+@use '../../../theme' as theme;
+
+.background {
+    cursor: pointer;
+    background-color: black;
+    padding: 1rem 1.5rem;
+    width: max-content;
+    border-radius: 2rem;
+    border: 2px solid transparent;
+}
+
+.text {
+    font-size: 1.25rem;
+    font-weight: 600;
+
+    @include mixin.text-gradient;
+}
+
+.primary {
+    background: linear-gradient(theme.$primary-color, theme.$primary-color) padding-box,
+                linear-gradient(to right, theme.$gradient-start, theme.$gradient-end) border-box;
+}
+
+.secondary {
+    background: linear-gradient(theme.$secondary-color, theme.$secondary-color) padding-box,
+                linear-gradient(to right, theme.$gradient-start, theme.$gradient-end) border-box;
+}
