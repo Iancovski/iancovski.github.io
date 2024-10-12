@@ -1,3 +1,5 @@
-<div class="background" [ngClass]="color">
-    <span class="text">{{text}}</span>
+<div class="background" [ngClass]="color" (click)="onClick()">
+    <span class="text">
+        <ng-content></ng-content>
+    </span>
 </div>

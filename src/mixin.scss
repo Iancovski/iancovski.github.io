@@ -1,17 +1,22 @@
-@use 'theme';
+@use 'colors';
 
 @mixin text-gradient {
-  color: transparent;
-  background: linear-gradient(to right, theme.$gradient-start, theme.$gradient-end);
-  background-clip: text;
-  -webkit-text-stroke-color: transparent;
-  -webkit-background-clip: text;
+    color: transparent;
+    background: linear-gradient(to right, colors.$gradient-start, colors.$gradient-end);
+    background-clip: text;
+    -webkit-text-stroke-color: transparent;
+    -webkit-background-clip: text;
 }
 
 @mixin text-gradient-stroke {
-  background: linear-gradient(to right, theme.$gradient-start, theme.$gradient-end);
-  background-clip: text;
-  -webkit-text-stroke-width: 4px;
-  -webkit-text-stroke-color: transparent;
-  -webkit-background-clip: text;
+    background: linear-gradient(to right, colors.$gradient-start, colors.$gradient-end);
+    background-clip: text;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: transparent;
+    -webkit-background-clip: text;
+}
+
+@mixin gradient-stroke($color) {
+    background: linear-gradient($color, $color) padding-box,
+                linear-gradient(to right, colors.$gradient-start, colors.$gradient-end) border-box;
 }

@@ -1,5 +1,5 @@
 @use '../../../mixin' as mixin;
-@use '../../../theme' as theme;
+@use '../../../colors' as colors;
 
 .background {
     cursor: pointer;
@@ -13,16 +13,17 @@
 .text {
     font-size: 1.25rem;
     font-weight: 600;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
     @include mixin.text-gradient;
 }
 
 .primary {
-    background: linear-gradient(theme.$primary-color, theme.$primary-color) padding-box,
-                linear-gradient(to right, theme.$gradient-start, theme.$gradient-end) border-box;
+    @include mixin.gradient-stroke(colors.$primary);
 }
 
 .secondary {
-    background: linear-gradient(theme.$secondary-color, theme.$secondary-color) padding-box,
-                linear-gradient(to right, theme.$gradient-start, theme.$gradient-end) border-box;
+    @include mixin.gradient-stroke(colors.$secondary);
 }

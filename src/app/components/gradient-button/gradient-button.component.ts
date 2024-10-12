@@ -11,8 +11,11 @@ import { NgClass } from '@angular/common';
     styleUrl: './gradient-button.component.scss'
 })
 export class GradientButtonComponent {
-    @Input() text: string = '';
     @Input() color: 'primary' | 'secondary' = 'primary'
 
     @Output() click: EventEmitter<null> = new EventEmitter;
+
+    onClick() {
+        this.click.emit();
+    }
 }

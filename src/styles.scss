@@ -1,35 +1,45 @@
 @use 'reset';
-@use 'theme';
+@use 'colors';
 @use 'mixin';
 
+html {
+    font-size: 16px;
+}
+
 * {
+  color: white;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+}
+
+body {
+    background-color: colors.$primary;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
 }
 
 h1 {
-  font-size: 6rem;
-  font-weight: 600;
-  color: theme.$primary-color;
+  font-size: 2rem;
+  color: colors.$primary;
   width: max-content;
   padding-bottom: 1rem;
 
-  @include mixin.text-gradient-stroke;
+  @include mixin.text-gradient;
 }
 
 h1.secondary {
-  color: theme.$secondary-color;
+  color: colors.$secondary;
 }
 
 h2 {
-  font-size: 3rem;
-  font-weight: 600;
+  font-size: 1.25rem;
   width: max-content;
 
   @include mixin.text-gradient;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.10rem;
 }
