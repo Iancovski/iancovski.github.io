@@ -1,0 +1,40 @@
+@use "../../../colors.scss" as colors;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: colors.$secondary;
+}
+
+.picture {
+    width: 100%;
+}
+
+.name {
+    position: relative;
+    font-size: 1.25rem;
+    top: -1.25rem;
+}
+
+.job {
+    position: relative;
+    top: -1rem;
+}
+
+.slogan {
+    max-width: 20rem;
+    line-height: 1.5rem;
+}
+
+.button {
+    margin: 2rem 0;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
