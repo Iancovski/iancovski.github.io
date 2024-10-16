@@ -1,4 +1,40 @@
 <div class="page-container">
     <h1>About</h1>
+
+    <p class="intro">
+        Hi, I'm Vinícius Iancovski, a 24-year-old full stack developer from Brazil.
+    </p>
+
+    <p [ngClass]="{'fade': !expanded}">
+        While still in high school, I had the opportunity to participate in a programming training program,
+        where I discovered my passion for problem-solving and building innovative solutions.
+        This led me to pursue a degree in software engineering, and start my career as a developer.
+
+        <span class="extra-text" [ngClass]="{'expanded': expanded}">
+            <p>
+                <br>
+                I'm driven by a commitment to excellence and simplicity. I believe in doing things right
+                without overcomplicating the process. My goal is to always create efficient and scalable
+                solutions that stand the test of time.
+                <br><br>
+                Today I am working and continuously learning, particularly in programming and English,
+                with a strong interest in expanding my expertise as an autodidact.
+                <br><br>
+                My dream is to start a new life in Europe, and I'm currently in the process of obtaining
+                Italian citizenship to help make that dream a reality. I enjoy traveling, hiking, and
+                outdoor activities that keep me connected to nature.
+            </p>
+        </span>
+    </p>
+
+    <button class="see-more-button" (click)="expanded = !expanded">
+        See
+        @if (expanded) {
+        less
+        } @else {
+        more
+        }
+    </button>
+
     <h2>Skills</h2>
 </div>

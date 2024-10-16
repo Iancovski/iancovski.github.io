@@ -1,0 +1,39 @@
+@use "../../../colors.scss" as colors;
+
+p {
+    text-align: justify;
+}
+
+.intro {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.extra-text {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: 250ms grid-template-rows ease;
+    overflow: hidden;
+}
+
+.extra-text > p {
+    overflow: hidden;
+}
+
+.expanded {
+    grid-template-rows: 1fr;
+}
+
+.fade {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), colors.$primary);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.see-more-button {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
