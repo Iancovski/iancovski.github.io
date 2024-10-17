@@ -1,0 +1,17 @@
+@use "../../../colors.scss" as colors;
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 6rem;
+    height: 6rem;
+    border: 2px solid colors.$tertiary;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    span {
+        font-size: 12px;
+    }
+}
