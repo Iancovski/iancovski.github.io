@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="header" (click)="expanded = !expanded">
+        <span class="date">
+            {{ startDate | monthYear }} -
+            {{ endDate | monthYear }}
+            ({{ monthsBetween | duration}})
+        </span>
+
+        <i class="icon material-icons">
+            @if (expanded) {
+            keyboard_arrow_up
+            } @else {
+            keyboard_arrow_down
+            }
+        </i>
+
+        <span class="title">{{ title }}</span>
+        <span class="company">{{ company }}</span>
+    </div>
+
+    <div class="content" [ngClass]="{'expanded': expanded}">
+        <ng-content></ng-content>
+    </div>
+</div>
