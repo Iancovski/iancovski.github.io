@@ -1,0 +1,6 @@
+@use "../../../colors.scss" as colors;
+
+.separator {
+    background-color: colors.$tertiary;
+    height: 2px;
+}
