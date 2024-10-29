@@ -1,16 +1,36 @@
-<div class="container">
-    <main-page></main-page>
-    <separator></separator>
+<button class="menu-button">
+    <i class="menu-icon material-icons" (click)="toggleMenu()">
+        @if (isMenuOpen) {
+        close
+        } @else {
+        menu
+        }
+    </i>
+</button>
 
-    <about-page></about-page>
-    <separator></separator>
-
-    <experience-page></experience-page>
-    <separator></separator>
-
-    <projects-page></projects-page>
-    <separator></separator>
-
-    <contact-page></contact-page>
-    <separator></separator>
+<div class="overlay" [ngClass]="{'open': isMenuOpen}" (click)="closeMenu()">
+    <ul class="menu" [ngClass]="{'open': isMenuOpen}">
+        <li (click)="scrollTo('main')">Home</li>
+        <li (click)="scrollTo('about')">About</li>
+        <li (click)="scrollTo('experience')">Experience</li>
+        <li (click)="scrollTo('projects')">Projects</li>
+        <li (click)="scrollTo('contact')">Contact</li>
+    </ul>
 </div>
+
+<body class="container">
+    <main-page id="main"></main-page>
+    <separator></separator>
+
+    <about-page id="about"></about-page>
+    <separator></separator>
+
+    <experience-page id="experience"></experience-page>
+    <separator></separator>
+
+    <projects-page id="projects"></projects-page>
+    <separator></separator>
+
+    <contact-page id="contact"></contact-page>
+    <separator></separator>
+</body>

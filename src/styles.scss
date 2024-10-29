@@ -12,6 +12,10 @@
     padding: 1rem;
 }
 
+.disable-scroll {
+    overflow: hidden;
+}
+
 // Components
 
 body {
@@ -20,13 +24,13 @@ body {
 
 h1, h2, h3 {
     font-weight: 600;
+    width: max-content;
 }
 
 h1 {
   font-size: 2rem;
   line-height: 2.5rem;
   color: colors.$primary;
-  width: max-content;
   padding-bottom: 1rem;
   @include mixin.text-gradient;
 }
@@ -38,7 +42,6 @@ h1.secondary {
 h2 {
   font-size: 1.25rem;
   line-height: 1.75rem;
-  width: max-content;
   padding: 1rem 0;
 
   @include mixin.text-gradient;
