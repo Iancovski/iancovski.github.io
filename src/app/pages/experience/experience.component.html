@@ -2,8 +2,8 @@
     <h1>Experience</h1>
 
     <div class="card-container">
-        <experience-panel startDate="12/01/2023" title="Lead Full Stack Developer" company="Limber Software"
-            [expanded]="true">
+        <card [pretitle]="getPeriod('12/01/2023')" title="Lead Full Stack Developer"
+            description="Limber Software">
             <p>
                 Today, I lead a sector focused on internal services and system integrators.<br><br>
                 Responsibilities:<br>
@@ -13,34 +13,34 @@
                 • Service maintenance on Google Cloud<br>
                 • Overseeing a Trainee developer<br>
             </p>
-        </experience-panel>
+        </card>
 
-        <experience-panel startDate="07/01/2023" endDate="12/01/2023" title="Back-end Developer"
-            company="Limber Software">
+        <card [pretitle]="getPeriod('07/01/2023', '12/01/2023')" title="Back-end Developer"
+            description="Limber Software">
             <p></p>
-        </experience-panel>
+        </card>
 
-        <experience-panel startDate="05/01/2022" endDate="07/01/2023" title="Delphi Developer"
-            company="Limber Software">
+        <card [pretitle]="getPeriod('05/01/2022', '07/01/2023')" title="Delphi Developer"
+            description="Limber Software">
             <p></p>
-        </experience-panel>
+        </card>
 
-        <experience-panel startDate="11/01/2021" endDate="04/01/2022" title="PowerBuilder & Java Developer"
-            company="CISS S.A">
+        <card [pretitle]="getPeriod('11/01/2021', '04/01/2022')" title="PowerBuilder & Java Developer"
+            description="CISS S.A">
             <p></p>
-        </experience-panel>
-        <experience-panel startDate="03/01/2018" endDate="11/01/2021" title="Delphi Developer"
-            company="Limber Software">
+        </card>
+        <card [pretitle]="getPeriod('03/01/2018', '11/01/2021')" title="Delphi Developer"
+            description="Limber Software">
             <p></p>
-        </experience-panel>
+        </card>
     </div>
 
     <h2>Education</h2>
 
     <div class="card-container">
-        <experience-panel startDate="01/01/2018" endDate="12/01/2021" title="Bachelor of Software Engineering"
-            company="UNIDEP">
+        <card [pretitle]="getPeriod('01/01/2018', '12/01/2021')" title="Bachelor of Software Engineering"
+            description="UNIDEP">
             <p></p>
-        </experience-panel>
+        </card>
     </div>
 </div>

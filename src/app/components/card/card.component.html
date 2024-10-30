@@ -1,9 +1,7 @@
 <div class="card">
     <div class="header" (click)="expanded = !expanded">
-        <span class="date">
-            {{ startDate | monthYear }} -
-            {{ endDate | monthYear }}
-            ({{ monthsBetween | duration}})
+        <span class="pretitle">
+            {{ pretitle }}
         </span>
 
         <i class="icon material-icons">
@@ -15,7 +13,7 @@
         </i>
 
         <span class="title">{{ title }}</span>
-        <span class="company">{{ company }}</span>
+        <span class="description">{{ description }}</span>
     </div>
 
     <div class="content" [ngClass]="{'expanded': expanded}">
