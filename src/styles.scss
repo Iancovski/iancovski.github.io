@@ -12,6 +12,13 @@
     padding: 1rem;
 }
 
+.card-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 1rem;
+}
+
 .disable-scroll {
     overflow: hidden;
 }
