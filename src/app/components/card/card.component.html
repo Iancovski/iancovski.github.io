@@ -1,8 +1,21 @@
 <div class="card">
-    <div class="header" (click)="expanded = !expanded">
-        <span class="pretitle">
-            {{ pretitle }}
-        </span>
+    <header class="header-container" (click)="expanded = !expanded">
+
+        @if (banner) {
+        <img [src]="banner" class="banner" alt="Banner">
+        }
+
+        <div class="header">
+            @if (pretitle) {
+            <span class="pretitle">{{ pretitle }}</span>
+            }
+
+            <span class="title">{{ title }}</span>
+
+            @if (description) {
+            <span class="description">{{ description }}</span>
+            }
+        </div>
 
         <i class="icon material-icons">
             @if (expanded) {
@@ -11,12 +24,13 @@
             keyboard_arrow_down
             }
         </i>
+    </header>
 
-        <span class="title">{{ title }}</span>
-        <span class="description">{{ description }}</span>
-    </div>
-
-    <div class="content" [ngClass]="{'expanded': expanded}">
-        <ng-content></ng-content>
-    </div>
+    <section class="content-container" [ngClass]="{'expanded': expanded}">
+        <div class="content">
+            <div class="spacer-lg"></div>
+            <ng-content></ng-content>
+            <div class="spacer-sm"></div>
+        </div>
+    </section>
 </div>

@@ -1,7 +1,8 @@
 @use "../../../colors.scss" as colors;
 
-$date-color: #696969;
+$pretitle-color: #696969;
 $content-color: #aaaaaa;
+$icon-color: #fafafa;
 
 .card {
     position: relative;
@@ -10,9 +11,25 @@ $content-color: #aaaaaa;
     background-color: colors.$secondary;
     border: 2px colors.$tertiary solid;
     border-radius: 1rem;
-    padding: 0.75rem;
     align-items: baseline;
     width: 100%;
+    overflow: hidden;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    width: 100%;
+    user-select: none;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner {
+    width: 100%;
+    height: 7.5rem;
+    object-fit: cover;
 }
 
 .header {
@@ -20,15 +37,16 @@ $content-color: #aaaaaa;
     flex-direction: column;
     align-items: baseline;
     width: 100%;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+    height: 100%;
     user-select: none;
+    padding: 0.75rem;
+    justify-content: end;
 }
 
 .pretitle {
     font-size: 0.8rem;
     font-weight: bold;
-    color: $date-color;
+    color: $pretitle-color;
     margin-bottom: 0.5rem;
 }
 
@@ -36,6 +54,9 @@ $content-color: #aaaaaa;
     position: absolute;
     top: 0.35rem;
     right: 0.5rem;
+    border-radius: 1rem;
+    color: $icon-color !important;
+    background-color: colors.$tertiary;
 }
 
 .title {
@@ -49,26 +70,33 @@ $content-color: #aaaaaa;
     font-weight: 300;
 }
 
-.material-icons {
-    color: $date-color;
+.content-container {
+    display: grid;
+    grid-template-rows: 0fr;
+    padding: 0 0.75rem;
+    overflow: hidden;
+    transition: 250ms grid-template-rows ease-in-out;
+}
+
+.content-container.expanded {
+    grid-template-rows: 1fr;
 }
 
 .content {
-    display: grid;
-    grid-template-rows: 0fr;
-    padding-top: 0;
-    transition: 250ms grid-template-rows ease, 250ms padding-top ease;
-    overflow: hidden;
-}
-
-.content ::ng-deep > * {
     overflow: hidden;
     align-items: baseline;
     text-align: left;
+
+}
+
+::ng-deep .content > *{
     color: $content-color;
 }
 
-.expanded {
-    grid-template-rows: 1fr;
-    padding-top: 1rem;
+.spacer-lg {
+    height: 1rem;
+}
+
+.spacer-sm {
+    height: 0.5rem;
 }
