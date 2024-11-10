@@ -1,0 +1,4 @@
+<div class="input-container">
+    <label [ngClass]="{'small': control.value}">{{label}}</label>
+    <input [ngClass]="{'label-space': control.value}" type="text" [formControl]="control">
+</div>

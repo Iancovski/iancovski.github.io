@@ -1,0 +1,33 @@
+@use '../../../colors.scss' as colors;
+
+.input-container {
+    position: relative;
+    background-color: colors.$tertiary;
+    border-radius: 0.5rem;
+    height: 3rem;
+}
+
+input {
+    height: 100%;
+    width: 100%;
+    padding: 0.5rem;
+    transition: 100ms margin-top ease-in-out;
+}
+
+input.label-space {
+    padding-top: 1.25rem;
+}
+
+label {
+    top: 0;
+    padding: 0.5rem;
+    position: absolute;
+    height: 100%;
+    align-content: center;
+    transition: 100ms all ease-in-out;
+}
+
+label.small {
+    font-size: 0.5rem;
+    height: 0.5rem;
+}
