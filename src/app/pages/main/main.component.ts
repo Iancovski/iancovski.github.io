@@ -9,5 +9,11 @@ import { GradientButtonComponent } from "../../components/gradient-button/gradie
     styleUrl: './main.component.scss'
 })
 export class MainComponent {
+    scrollToContact() {
+        const element = document.getElementById('contact');
 
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
 }
