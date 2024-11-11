@@ -1,9 +1,5 @@
 @use "../../../colors.scss" as colors;
 
-$pretitle-color: #696969;
-$content-color: #aaaaaa;
-$icon-color: #fafafa;
-
 .card {
     position: relative;
     display: flex;
@@ -46,7 +42,7 @@ $icon-color: #fafafa;
 .pretitle {
     font-size: 0.8rem;
     font-weight: bold;
-    color: $pretitle-color;
+    color: colors.$dark-grey;
     margin-bottom: 0.5rem;
 }
 
@@ -55,7 +51,7 @@ $icon-color: #fafafa;
     top: 0.35rem;
     right: 0.5rem;
     border-radius: 1rem;
-    color: $icon-color !important;
+    color: colors.$light-grey !important;
     background-color: colors.$tertiary;
 }
 
@@ -90,7 +86,7 @@ $icon-color: #fafafa;
 }
 
 ::ng-deep .content > *{
-    color: $content-color;
+    color: colors.$medium-grey;
 }
 
 .spacer-lg {

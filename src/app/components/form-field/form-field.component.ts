@@ -12,4 +12,8 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 export class FormFieldComponent {
     @Input() label: string = '';
     @Input() control!: FormControl;
+    @Input() fieldId: string = '';
+    @Input() type: FieldType = 'input';
 }
+
+type FieldType = 'input' | 'textarea';
