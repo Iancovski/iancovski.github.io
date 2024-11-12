@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { GradientButtonComponent } from "../../components/gradient-button/gradient-button.component";
 
 @Component({
-    selector: 'main-page',
+    selector: 'home-page',
     standalone: true,
     imports: [GradientButtonComponent],
-    templateUrl: './main.component.html',
-    styleUrl: './main.component.scss'
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
-export class MainComponent {
+export class HomeComponent {
     scrollToContact() {
         const element = document.getElementById('contact');
 

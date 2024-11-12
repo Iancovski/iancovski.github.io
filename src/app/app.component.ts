@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MainComponent } from "./pages/main/main.component";
+import { HomeComponent } from "./pages/home/home.component";
 import { AboutComponent } from "./pages/about/about.component";
 import { ExperienceComponent } from "./pages/experience/experience.component";
 import { ProjectsComponent } from "./pages/projects/projects.component";
@@ -10,7 +10,7 @@ import { NgClass } from '@angular/common';
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [MainComponent, AboutComponent, ExperienceComponent, ProjectsComponent, ContactComponent, SeparatorComponent, NgClass],
+    imports: [HomeComponent, AboutComponent, ExperienceComponent, ProjectsComponent, ContactComponent, SeparatorComponent, NgClass],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })

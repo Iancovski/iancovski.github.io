@@ -10,7 +10,7 @@
 
 <div class="overlay" [ngClass]="{'open': isMenuOpen}" (click)="closeMenu()">
     <ul class="menu" [ngClass]="{'open': isMenuOpen}">
-        <li (click)="scrollTo('main')">Home</li>
+        <li (click)="scrollTo('home')">Home</li>
         <li (click)="scrollTo('about')">About</li>
         <li (click)="scrollTo('experience')">Experience</li>
         <li (click)="scrollTo('projects')">Projects</li>
@@ -19,7 +19,7 @@
 </div>
 
 <body class="container">
-    <main-page id="main"></main-page>
+    <home-page id="home"></home-page>
     <separator></separator>
 
     <about-page id="about"></about-page>
