@@ -1,3 +1,35 @@
 <div class="page-container">
     <h1>Contact</h1>
+
+    <p>
+        Did you like what you saw?<br>
+        Let's work together!
+    </p>
+
+    <section class="socials-container">
+        <div class="social">
+            <img ngSrc="icons/socials/email.png" alt="Email" width="32" height="32">
+            <span>iancovski.vinicius&#64;gmail.com</span>
+        </div>
+        <div class="social">
+            <img ngSrc="icons/socials/linkedin.png" alt="LinkedIn" width="32" height="32">
+            <span>viniciusiancovski</span>
+        </div>
+        <div class="social">
+            <img ngSrc="icons/socials/fiverr.png" alt="Fiverr" width="32" height="32">
+            <span>iancovski</span>
+        </div>
+    </section>
+
+    <p>You can also send me a message by the form below.</p>
+
+    <form [formGroup]="form" class="form">
+        <form-field label="Name" fieldId="name-input" [control]="form.controls.name"></form-field>
+        <form-field label="Email" fieldId="email-input" [control]="form.controls.email"></form-field>
+        <form-field label="Subject" fieldId="subject-input" [control]="form.controls.subject"></form-field>
+        <form-field label="Message" fieldId="message-input" [control]="form.controls.message"
+            type="textarea"></form-field>
+
+        <gradient-button (click)="sendMessage()">Send Message</gradient-button>
+    </form>
 </div>
