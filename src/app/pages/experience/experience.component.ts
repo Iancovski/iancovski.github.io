@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CardComponent } from "../../components/card/card.component";
+import { ExperienceCardComponent } from "../../components/experience-card/experience-card.component";
 
 @Component({
     selector: 'experience-page',
     standalone: true,
-    imports: [CardComponent],
+    imports: [ExperienceCardComponent],
     templateUrl: './experience.component.html',
     styleUrl: './experience.component.scss'
 })

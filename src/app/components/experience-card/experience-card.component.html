@@ -1,0 +1,31 @@
+<div class="card">
+    <header class="header-container" (click)="expanded = !expanded">
+        <div class="header">
+            @if (pretitle) {
+            <span class="pretitle">{{ pretitle }}</span>
+            }
+
+            <span class="title">{{ title }}</span>
+
+            @if (description) {
+            <span class="description">{{ description }}</span>
+            }
+        </div>
+
+        <i class="icon material-icons">
+            @if (expanded) {
+            keyboard_arrow_up
+            } @else {
+            keyboard_arrow_down
+            }
+        </i>
+    </header>
+
+    <section class="content-container" [ngClass]="{'expanded': expanded}">
+        <div class="content">
+            <div class="spacer"></div>
+            <ng-content></ng-content>
+            <div class="spacer"></div>
+        </div>
+    </section>
+</div>
