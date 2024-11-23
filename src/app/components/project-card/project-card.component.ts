@@ -10,8 +10,7 @@ import { NgClass } from '@angular/common';
 })
 export class ProjectCardComponent {
     @Input() banner: string = '';
-    @Input() pretitle: string = '';
     @Input() title: string = '';
-    @Input() description: string = '';
+    @Input() category: string = '';
     @Input() expanded: boolean = false;
 }

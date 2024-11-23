@@ -8,12 +8,12 @@
     align-items: baseline;
     width: 100%;
     overflow: hidden;
+    border-radius: 0.5rem;
 }
 
 .header {
     display: flex;
     background-color: colors.$secondary;
-    border-left: 2px colors.$dark-grey solid;
     flex-direction: column;
     align-items: baseline;
     width: 100%;
@@ -23,10 +23,10 @@
     justify-content: end;
 }
 
-.pretitle {
+.period {
     font-size: 0.8rem;
     font-weight: bold;
-    color: colors.$dark-grey;
+    color: colors.$grey;
     margin-bottom: 0.5rem;
 }
 
@@ -35,7 +35,7 @@
     top: 0.35rem;
     right: 0.5rem;
     border-radius: 1rem;
-    color: colors.$dark-grey !important;
+    color: colors.$grey !important;
 }
 
 .title {
@@ -44,7 +44,7 @@
     margin-bottom: 0.25rem;
 }
 
-.description {
+.organization {
     font-size: 1rem;
     font-weight: 300;
 }
@@ -68,7 +68,7 @@
 }
 
 ::ng-deep .content > *{
-    color: colors.$medium-grey;
+    color: colors.$light-grey;
 }
 
 .spacer {
