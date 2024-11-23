@@ -1,16 +1,8 @@
 <div class="card">
-    <header class="header-container" (click)="expanded = !expanded">
-        <div class="header">
-            @if (pretitle) {
-            <span class="pretitle">{{ pretitle }}</span>
-            }
-
-            <span class="title">{{ title }}</span>
-
-            @if (description) {
-            <span class="description">{{ description }}</span>
-            }
-        </div>
+    <header class="header" (click)="expanded = !expanded">
+        <span class="pretitle">{{ period }}</span>
+        <span class="title">{{ title }}</span>
+        <span class="description">{{ organization }}</span>
 
         <i class="icon material-icons">
             @if (expanded) {

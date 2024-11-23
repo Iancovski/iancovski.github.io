@@ -9,8 +9,8 @@ import { NgClass } from '@angular/common';
     styleUrl: './experience-card.component.scss'
 })
 export class ExperienceCardComponent {
-    @Input() pretitle: string = '';
+    @Input() period: string = '';
     @Input() title: string = '';
-    @Input() description: string = '';
+    @Input() organization: string = '';
     @Input() expanded: boolean = false;
 }

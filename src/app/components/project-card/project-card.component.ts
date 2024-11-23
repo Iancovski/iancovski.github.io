@@ -2,13 +2,13 @@ import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
-    selector: 'card',
+    selector: 'project-card',
     standalone: true,
     imports: [NgClass],
-    templateUrl: './card.component.html',
-    styleUrl: './card.component.scss'
+    templateUrl: './project-card.component.html',
+    styleUrl: './project-card.component.scss'
 })
-export class CardComponent {
+export class ProjectCardComponent {
     @Input() banner: string = '';
     @Input() pretitle: string = '';
     @Input() title: string = '';
