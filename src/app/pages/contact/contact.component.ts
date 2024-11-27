@@ -12,7 +12,9 @@ import { GradientButtonComponent } from "../../components/gradient-button/gradie
     styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-    form = new FormGroup({
+    protected sendingMessage: boolean = false;
+
+    protected form = new FormGroup({
         name: new FormControl('', Validators.required),
         email: new FormControl('', Validators.required),
         subject: new FormControl('', Validators.required),

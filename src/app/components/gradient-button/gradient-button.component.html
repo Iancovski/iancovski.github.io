@@ -1,5 +1,9 @@
-<div class="background" [ngClass]="color" (click)="onClick()">
-    <span class="text">
+<div class="background" [ngClass]="color" (click)="click()">
+    @if (loading) {
+    <loader class="loader"></loader>
+    }
+
+    <span class="text" [ngClass]="{'loading': loading}">
         <ng-content></ng-content>
     </span>
 </div>
