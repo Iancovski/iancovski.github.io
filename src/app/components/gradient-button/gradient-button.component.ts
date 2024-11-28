@@ -13,7 +13,8 @@ import { LoaderComponent } from "../loader/loader.component";
     styleUrl: './gradient-button.component.scss'
 })
 export class GradientButtonComponent {
-    @Input() color: 'primary' | 'secondary' = 'primary'
+    @Input() color: 'primary' | 'secondary' = 'primary';
+    @Input() disabled: boolean = false;
     @Input() loading: boolean = false;
 
     @Output() onClick: EventEmitter<null> = new EventEmitter;

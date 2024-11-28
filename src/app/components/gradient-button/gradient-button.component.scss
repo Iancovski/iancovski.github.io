@@ -9,6 +9,11 @@
     border-radius: 2rem;
     border: 2px solid transparent;
     position: relative;
+    transition: 250ms filter ease-in-out;
+}
+
+.disabled {
+    filter: grayscale(100);
 }
 
 .text {

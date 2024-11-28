@@ -1,4 +1,4 @@
-<div class="background" [ngClass]="color" (click)="click()">
+<div class="background {{color}}" [ngClass]="{'disabled': disabled}" (click)="click()">
     @if (loading) {
     <loader class="loader"></loader>
     }
