@@ -18,7 +18,7 @@ export class FormFieldComponent implements OnInit {
     protected required: boolean = false;
 
     ngOnInit(): void {
-        this.required = this.control.hasValidator(Validators.required)
+        this.required = this.control.hasValidator(Validators.required);
     }
 }
 

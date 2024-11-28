@@ -31,14 +31,19 @@ export class ContactComponent {
     }
 
     sendMessage() {
-        if (!this.validForm) return;
+        if (!this.validForm) {
+            return this.snackbarService.show('Fill in all mandatory fields.', { type: 'error' });
+        }
 
+        this.form.disable();
         this.sendingMessage = true;
 
         // Simulate the message sending
         setTimeout(() => {
             this.form.reset();
+            this.form.enable();
             this.sendingMessage = false;
+
             this.snackbarService.show('Message sent successfully!');
         }, 3000);
     }
