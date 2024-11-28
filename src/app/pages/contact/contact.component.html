@@ -30,6 +30,7 @@
         <form-field label="Message" fieldId="message-input" [control]="form.controls.message"
             type="textarea"></form-field>
 
-        <gradient-button (onClick)="sendMessage()" [loading]="sendingMessage">Send Message</gradient-button>
+        <gradient-button (onClick)="sendMessage()" [disabled]="!validForm" [loading]="sendingMessage">Send
+            Message</gradient-button>
     </form>
 </div>
