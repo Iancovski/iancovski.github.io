@@ -1,0 +1,24 @@
+.snackbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 6rem;
+    right: 1rem;
+    background-color: #69ca31;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.75);
+    z-index: 1000;
+}
+
+.close-button {
+    margin-left: 1rem;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 2rem;
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.25rem;
+}
