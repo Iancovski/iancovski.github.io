@@ -1,5 +1,8 @@
 <div class="input-container" [ngClass]="type">
-    <label [for]="fieldId" [ngClass]="{'small': control.value}">{{label}}</label>
+    <label [for]="fieldId" [ngClass]="{'small': control.value}">
+        {{label + (required ? '*' : '')}}
+    </label>
+
     @if (type === 'input') {
     <input [id]="fieldId" [ngClass]="{'label-space': control.value}" type="text" [formControl]="control">
     } @else {

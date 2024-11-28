@@ -1,6 +1,6 @@
 import { NgClass } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
     selector: 'form-field',
@@ -9,11 +9,17 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
     templateUrl: './form-field.component.html',
     styleUrl: './form-field.component.scss'
 })
-export class FormFieldComponent {
+export class FormFieldComponent implements OnInit {
     @Input() label: string = '';
     @Input() control!: FormControl;
     @Input() fieldId: string = '';
     @Input() type: FieldType = 'input';
+
+    protected required: boolean = false;
+
+    ngOnInit(): void {
+        this.required = this.control.hasValidator(Validators.required)
+    }
 }
 
 type FieldType = 'input' | 'textarea';
