@@ -1,19 +1,19 @@
-.container {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    position: fixed;
-    bottom: 6rem;
-    z-index: 1000;
-}
-
 .snackbar {
     display: flex;
+    position: fixed;
+    bottom: 6rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 1000;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 0 1rem rgba(0,0,0,0.5);
+}
+
+.snackbar span {
+    white-space: pre-line;
 }
 
 .success {

@@ -5,6 +5,7 @@ import { FormFieldComponent } from "../../components/form-field/form-field.compo
 import { GradientButtonComponent } from "../../components/gradient-button/gradient-button.component";
 import { SnackbarService } from '../../services/snackbar.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { environment } from '../../../environments/environment';
 
 @Component({
     selector: 'contact-page',
@@ -30,7 +31,7 @@ export class ContactComponent {
         });
     }
 
-    sendMessage() {
+    async sendMessage() {
         if (!this.validForm) {
             return this.snackbarService.show('Fill in all mandatory fields.', { type: 'error' });
         }
@@ -38,13 +39,33 @@ export class ContactComponent {
         this.form.disable();
         this.sendingMessage = true;
 
-        // Simulate the message sending
-        setTimeout(() => {
-            this.form.reset();
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    ...this.form.getRawValue(),
+                    access_key: environment.emailAccessKey
+                })
+            });
+
+            let json = await response.json();
+
+            if (response.status == 200) {
+                this.snackbarService.show('Message submitted successfully!');
+                this.form.reset();
+            } else {
+                throw new Error(json.message);
+            }
+        } catch (error: any) {
+            this.snackbarService.show('Something went wrong!\nPlease try again later.', { type: 'error' });
+            console.error(error.message)
+        } finally {
             this.form.enable();
             this.sendingMessage = false;
-
-            this.snackbarService.show('Message sent successfully!');
-        }, 3000);
+        }
     }
 }

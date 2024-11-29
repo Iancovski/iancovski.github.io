@@ -1,10 +1,8 @@
 @if (isVisible) {
-<div class="container" [@fadeInOut]>
-    <div class="snackbar {{type}}">
-        <span>{{ message }}</span>
-        <button (click)="close()" class="close-button">
-            <i class="material-icons">close</i>
-        </button>
-    </div>
+<div class="snackbar {{type}}" [@fadeInOut]>
+    <span>{{ message }}</span>
+    <button (click)="close()" class="close-button">
+        <i class="material-icons">close</i>
+    </button>
 </div>
 }
