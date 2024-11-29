@@ -24,10 +24,11 @@
     <p>You can also send me a message by the form below.</p>
 
     <form [formGroup]="form" class="form">
-        <form-field label="Name" fieldId="name-input" [control]="form.controls.name"></form-field>
-        <form-field label="Email" fieldId="email-input" [control]="form.controls.email"></form-field>
-        <form-field label="Subject" fieldId="subject-input" [control]="form.controls.subject"></form-field>
-        <form-field label="Message" fieldId="message-input" [control]="form.controls.message"
+        <form-field label="Name" fieldId="name-input" [control]="form.controls.name" [maxLength]="500"></form-field>
+        <form-field label="Email" fieldId="email-input" [control]="form.controls.email" [maxLength]="100"></form-field>
+        <form-field label="Subject" fieldId="subject-input" [control]="form.controls.subject"
+            [maxLength]="100"></form-field>
+        <form-field label="Message" fieldId="message-input" [control]="form.controls.message" [maxLength]="2000"
             type="textarea"></form-field>
 
         <gradient-button (onClick)="sendMessage()" [disabled]="!validForm" [loading]="sendingMessage">Send

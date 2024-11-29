@@ -14,6 +14,7 @@ export class FormFieldComponent implements OnInit {
     @Input() control!: FormControl;
     @Input() fieldId: string = '';
     @Input() type: FieldType = 'input';
+    @Input() maxLength!: number;
 
     protected required: boolean = false;
 

@@ -4,8 +4,10 @@
     </label>
 
     @if (type === 'input') {
-    <input [id]="fieldId" [ngClass]="{'label-space': control.value}" type="text" [formControl]="control">
+    <input [id]="fieldId" [ngClass]="{'label-space': control.value}" type="text" [formControl]="control"
+        [attr.maxlength]="maxLength">
     } @else {
-    <textarea [id]="fieldId" [ngClass]="{'label-space': control.value}" type="text" [formControl]="control"></textarea>
+    <textarea [id]="fieldId" [ngClass]="{'label-space': control.value}" type="text" [formControl]="control"
+        [attr.maxlength]="maxLength"></textarea>
     }
 </div>

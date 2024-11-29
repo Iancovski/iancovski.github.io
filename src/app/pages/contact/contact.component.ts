@@ -18,10 +18,10 @@ export class ContactComponent {
     protected validForm: boolean = false;
 
     protected form = new FormGroup({
-        name: new FormControl('', Validators.required),
-        email: new FormControl('', Validators.required),
-        subject: new FormControl('', Validators.required),
-        message: new FormControl('', Validators.required)
+        name: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+        email: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+        subject: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+        message: new FormControl('', [Validators.required, Validators.maxLength(2000)])
     });
 
     constructor(private snackbarService: SnackbarService) {
