@@ -68,4 +68,15 @@ export class ContactComponent {
             this.sendingMessage = false;
         }
     }
+
+    protected open(social: string) {
+        const socialUrl = {
+            'email': 'mailto:iancovski.vinicius@gmail.com',
+            'linkedin': 'https://www.linkedin.com/in/iancovski/',
+            'fiverr': 'https://www.fiverr.com/iancovski'
+        }
+
+        // @ts-ignore
+        window.open(socialUrl[social], '_blank').focus();
+    }
 }
