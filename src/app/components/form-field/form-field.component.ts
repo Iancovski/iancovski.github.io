@@ -14,11 +14,12 @@ export class FormFieldComponent implements OnInit {
     @Input() control!: FormControl;
     @Input() fieldId: string = '';
     @Input() type: FieldType = 'input';
+    @Input() maxLength!: number;
 
     protected required: boolean = false;
 
     ngOnInit(): void {
-        this.required = this.control.hasValidator(Validators.required)
+        this.required = this.control.hasValidator(Validators.required);
     }
 }
 

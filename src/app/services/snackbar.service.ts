@@ -11,7 +11,7 @@ export class SnackbarService {
         this.snackbarComponent = snackbar;
     }
 
-    show(message: string, duration: number = 3000) {
-        this.snackbarComponent.open(message, duration);
+    show(message: string, options?: { type?: 'success' | 'error', duration?: number }) {
+        this.snackbarComponent.open(message, options);
     }
 }

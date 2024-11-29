@@ -1,5 +1,5 @@
 @if (isVisible) {
-<div class="snackbar" [@fadeInOut]>
+<div class="snackbar {{type}}" [@fadeInOut]>
     <span>{{ message }}</span>
     <button (click)="close()" class="close-button">
         <i class="material-icons">close</i>

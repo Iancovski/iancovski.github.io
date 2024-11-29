@@ -1,15 +1,27 @@
 .snackbar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: fixed;
     bottom: 6rem;
+    left: 1rem;
     right: 1rem;
-    background-color: #69ca31;
+    z-index: 1000;
+    justify-content: space-between;
+    align-items: center;
     padding: 1rem;
     border-radius: 0.5rem;
-    box-shadow: 0 0 1rem rgba(0,0,0,0.75);
-    z-index: 1000;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.5);
+}
+
+.snackbar span {
+    white-space: pre-line;
+}
+
+.success {
+    background-color: #69ca31;
+}
+
+.error {
+    background-color: #ca3131;
 }
 
 .close-button {

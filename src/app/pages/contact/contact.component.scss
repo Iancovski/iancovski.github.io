@@ -21,8 +21,14 @@
 
 .form {
     margin-top: 1rem;
+    margin-bottom: 5rem;
     display: flex;
     flex-direction: column;
     width: 100%;
     row-gap: 0.5rem;
+    align-items: center;
+}
+
+.form form-field {
+    width: 100%;
 }

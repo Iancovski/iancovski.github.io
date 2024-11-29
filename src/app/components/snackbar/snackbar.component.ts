@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'snackbar',
@@ -9,27 +9,41 @@ import { Component, Input } from '@angular/core';
     styleUrl: './snackbar.component.scss',
     animations: [
         trigger('fadeInOut', [
-            state('void', style({ opacity: 0, transform: 'translateX(1rem)' })),
+            state('void', style({ opacity: 0, transform: 'translateY(1rem)' })),
             transition(':enter', [
-                animate('300ms ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
+                animate('300ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
             ]),
             transition(':leave', [
-                animate('300ms ease-in', style({ opacity: 0, transform: 'translateX(1rem)' }))
+                animate('300ms ease-in', style({ opacity: 0, transform: 'translateY(1rem)' }))
             ])
         ])
     ]
 })
 export class SnackbarComponent {
-    @Input() message: string = '';
-    isVisible: boolean = false;
+    protected message: string = '';
+    protected isVisible: boolean = false;
+    protected type: 'success' | 'error' | undefined = 'success';
 
-    open(message: string, duration: number = 3000) {
+    private timeout!: NodeJS.Timeout;
+
+    open(message: string, options?: { type?: 'success' | 'error', duration?: number }) {
+        if (this.isVisible) {
+            this.close();
+        }
+
+        options = {
+            type: options?.type || 'success',
+            duration: options?.duration || 3000
+        }
+
         this.message = message;
         this.isVisible = true;
-        setTimeout(() => this.close(), duration);
+        this.type = options.type;
+        this.timeout = setTimeout(() => this.close(), options.duration);
     }
 
     close() {
+        clearTimeout(this.timeout);
         this.isVisible = false;
     }
 }
