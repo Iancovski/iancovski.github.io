@@ -1,4 +1,17 @@
+@use "../colors.scss" as colors;
+
 .container {
     display: flex;
     flex-direction: column;
+}
+
+.footer {
+    width: 100%;
+    text-align: center;
+    color: colors.$dark-grey;
+    font-size: 0.75rem;
+}
+
+.footer u {
+    color: colors.$dark-grey;
 }

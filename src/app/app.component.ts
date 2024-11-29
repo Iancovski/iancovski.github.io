@@ -26,4 +26,9 @@ export class AppComponent {
     ngAfterViewInit() {
         this.snackbarService.setComponent(this.snackbar);
     }
+
+    openUrl() {
+        // @ts-ignore
+        window.open("https://icons8.com.br", '_blank').focus();
+    }
 }
