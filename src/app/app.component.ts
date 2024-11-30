@@ -17,7 +17,7 @@ import { SnackbarService } from './services/snackbar.service';
     styleUrl: './app.component.scss'
 })
 export class AppComponent {
-    title = 'landing-page';
+    title = 'Vinícius Iancovski - Full Stack Developer';
 
     @ViewChild(SnackbarComponent) snackbar!: SnackbarComponent;
 
