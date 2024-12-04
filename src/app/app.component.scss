@@ -1,4 +1,5 @@
 @use "../colors.scss" as colors;
+@use "../mixin.scss" as mixin;
 
 .container {
     display: flex;
@@ -14,4 +15,10 @@
 
 .footer u {
     color: colors.$dark-grey;
+}
+
+mobile-menu {
+    @include mixin.media(mobile) {
+        display: none;
+    }
 }

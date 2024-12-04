@@ -1,32 +1,72 @@
+@use "../../../mixin.scss" as mixin;
 @use "../../../colors.scss" as colors;
 
 .container {
+    position: relative;
     display: flex;
     flex-direction: column;
+    background-color: colors.$secondary;
     align-items: center;
     text-align: center;
-    background-color: colors.$secondary;
+
+    @include mixin.media(desktop) {
+        height: 90svh;
+        align-items: baseline;
+        text-align: start;
+        justify-content: space-between;
+        padding: 8rem;
+    }
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
 }
 
 .picture {
     width: 100%;
+
+    @include mixin.media(desktop) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: auto;
+        height: 100%;
+    }
 }
 
 .name {
     position: relative;
     font-size: 1.25rem;
     top: -1.25rem;
+
+    @include mixin.media(desktop) {
+        top: auto;
+        font-size: 3rem;
+    }
 }
 
 .job {
     position: relative;
     top: -1.25rem;
     margin-bottom: -0.75rem;
+
+    @include mixin.media(desktop) {
+        color: colors.$secondary;
+        top: auto;
+        margin-bottom: auto;
+    }
 }
 
 .slogan {
     max-width: 20rem;
     line-height: 1.5rem;
+
+    @include mixin.media(desktop) {
+        max-width: none;
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
 }
 
 .button {

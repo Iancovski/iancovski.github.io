@@ -1,5 +1,16 @@
 @use 'colors';
 
+$breakpoints: (
+    mobile: 480px,
+    tablet: 768px,
+    desktop: 1024px,
+);
+
+$widths: (
+    min: min-width,
+    max: max-width
+);
+
 @mixin text-gradient {
     color: transparent;
     background: linear-gradient(to right, colors.$gradient-start, colors.$gradient-end);
@@ -11,7 +22,7 @@
 @mixin text-gradient-stroke {
     background: linear-gradient(to right, colors.$gradient-start, colors.$gradient-end);
     background-clip: text;
-    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-width: 4px;
     -webkit-text-stroke-color: transparent;
     -webkit-background-clip: text;
 }
@@ -19,4 +30,10 @@
 @mixin gradient-stroke($color) {
     background: linear-gradient($color, $color) padding-box,
                 linear-gradient(to right, colors.$gradient-start, colors.$gradient-end) border-box;
+}
+
+@mixin media($breakpoint, $width: min) {
+    @media (map-get($widths, $width): map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
 }

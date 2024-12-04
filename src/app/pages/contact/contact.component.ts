@@ -70,13 +70,12 @@ export class ContactComponent {
     }
 
     protected open(social: string) {
-        const socialUrl = {
+        const socialUrl: Record<string, string> = {
             'email': 'mailto:iancovski.vinicius@gmail.com',
             'linkedin': 'https://www.linkedin.com/in/iancovski/',
             'fiverr': 'https://www.fiverr.com/iancovski'
         }
 
-        // @ts-ignore
-        window.open(socialUrl[social], '_blank').focus();
+        window.open(socialUrl[social], '_blank')?.focus();
     }
 }

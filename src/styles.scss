@@ -35,29 +35,38 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 2rem;
-  line-height: 2.5rem;
-  color: colors.$primary;
-  padding-bottom: 1rem;
-  @include mixin.text-gradient;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    color: colors.$primary;
+    padding-bottom: 1rem;
+
+    @include mixin.media(mobile, max) {
+        @include mixin.text-gradient;
+    }
+
+    @include mixin.media(desktop) {
+        font-size: 5rem;
+        line-height: 5.5rem;
+        @include mixin.text-gradient-stroke();
+    }
 }
 
 h1.secondary {
-  color: colors.$secondary;
+    color: colors.$secondary;
 }
 
 h2 {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  padding: 1rem 0;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    padding: 1rem 0;
 
-  @include mixin.text-gradient;
+    @include mixin.text-gradient;
 }
 
 h3 {
-  font-size: 1.10rem;
-  line-height: 1.60rem;
-  padding: 1rem 0;
+    font-size: 1.10rem;
+    line-height: 1.60rem;
+    padding: 1rem 0;
 }
 
 p {
@@ -71,8 +80,8 @@ html {
 }
 
 * {
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  box-sizing: border-box;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
 }

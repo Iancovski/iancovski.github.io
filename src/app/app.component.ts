@@ -28,7 +28,6 @@ export class AppComponent {
     }
 
     openUrl() {
-        // @ts-ignore
-        window.open("https://icons8.com.br", '_blank').focus();
+        window.open("https://icons8.com.br", '_blank')?.focus();
     }
 }
