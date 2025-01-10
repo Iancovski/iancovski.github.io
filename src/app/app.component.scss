@@ -1,5 +1,5 @@
-@use "../colors.scss" as colors;
-@use "../mixin.scss" as mixin;
+@use "../styles/colors.scss" as colors;
+@use "../styles/mixin/media.mixin.scss" as media-mixin;
 
 .container {
     display: flex;
@@ -18,7 +18,7 @@
 }
 
 mobile-menu {
-    @include mixin.media(mobile) {
+    @include media-mixin.media(small) {
         display: none;
     }
 }

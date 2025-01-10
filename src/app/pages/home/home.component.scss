@@ -1,5 +1,5 @@
-@use "../../../mixin.scss" as mixin;
-@use "../../../colors.scss" as colors;
+@use "../../../styles/colors.scss" as colors;
+@use "../../../styles/mixin/media.mixin.scss" as media-mixin;
 
 .container {
     position: relative;
@@ -9,7 +9,7 @@
     align-items: center;
     text-align: center;
 
-    @include mixin.media(desktop) {
+    @include media-mixin.media(small) {
         height: 90svh;
         align-items: baseline;
         text-align: start;
@@ -26,7 +26,7 @@
 .picture {
     width: 100%;
 
-    @include mixin.media(desktop) {
+    @include media-mixin.media(small) {
         position: absolute;
         top: 0;
         right: 0;
@@ -40,7 +40,7 @@
     font-size: 1.25rem;
     top: -1.25rem;
 
-    @include mixin.media(desktop) {
+    @include media-mixin.media(small) {
         top: auto;
         font-size: 3rem;
     }
@@ -51,7 +51,7 @@
     top: -1.25rem;
     margin-bottom: -0.75rem;
 
-    @include mixin.media(desktop) {
+    @include media-mixin.media(small) {
         color: colors.$secondary;
         top: auto;
         margin-bottom: auto;
@@ -62,7 +62,7 @@
     max-width: 20rem;
     line-height: 1.5rem;
 
-    @include mixin.media(desktop) {
+    @include media-mixin.media(small) {
         max-width: none;
         font-size: 1.25rem;
         margin-bottom: 0.5rem;
