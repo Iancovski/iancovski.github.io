@@ -40,7 +40,15 @@ h1 {
     color: colors.$primary;
     padding-bottom: 1rem;
 
-    @include mixin.text-gradient;
+    @include mixin.media(mobile, max) {
+        @include mixin.text-gradient;
+    }
+
+    @include mixin.media(desktop) {
+        font-size: 5rem;
+        line-height: 5.5rem;
+        @include mixin.text-gradient-stroke();
+    }
 }
 
 h1.secondary {

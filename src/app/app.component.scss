@@ -16,3 +16,9 @@
 .footer u {
     color: colors.$dark-grey;
 }
+
+mobile-menu {
+    @include mixin.media(mobile) {
+        display: none;
+    }
+}
