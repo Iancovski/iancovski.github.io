@@ -1,18 +1,20 @@
-<div class="container">
+<body class="container">
     <picture>
         <source srcset="pictures/profile.jpg" media="(min-width: 1024px)">
         <img src="pictures/profile-sm.jpg" alt="Vinícius Iancovski" class="picture">
     </picture>
 
-    <div class="group">
-        <span class="name">Vinícius Iancovski</span>
-        <h1 class="job">Full Stack Developer</h1>
-    </div>
+    <article class="group">
+        <section class="title">
+            <span>Vinícius Iancovski</span>
+            <h1>Full Stack Developer</h1>
+        </section>
 
-    <div class="group">
-        <p class="slogan">Scalability, efficiency, simplicity, reliability, and maintainability.</p>
-        <p class="slogan">That's what I deliver.</p>
-    </div>
+        <section class="slogan">
+            <p>Scalability, efficiency, simplicity, reliability, and maintainability.</p>
+            <p>That's what I deliver.</p>
+        </section>
 
-    <gradient-button class="button" color="secondary" (click)="scrollToContact()">Get in touch</gradient-button>
-</div>
+        <gradient-button class="button" color="secondary" (click)="scrollToContact()">Get in touch</gradient-button>
+    </article>
+</body>

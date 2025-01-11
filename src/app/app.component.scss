@@ -18,7 +18,7 @@
 }
 
 mobile-menu {
-    @include media-mixin.media(small) {
+    @include media-mixin.min(small-screen) {
         display: none;
     }
 }

@@ -6,27 +6,18 @@
     display: flex;
     flex-direction: column;
     background-color: colors.$secondary;
-    align-items: center;
-    text-align: center;
 
-    @include media-mixin.media(small) {
+    @include media-mixin.min(small-screen) {
         height: 90svh;
-        align-items: baseline;
-        text-align: start;
-        justify-content: space-between;
-        padding: 8rem;
+        padding: 10rem 8rem;
     }
-}
-
-.group {
-    display: flex;
-    flex-direction: column;
 }
 
 .picture {
     width: 100%;
+    z-index: 0;
 
-    @include media-mixin.media(small) {
+    @include media-mixin.min(small-screen) {
         position: absolute;
         top: 0;
         right: 0;
@@ -35,40 +26,84 @@
     }
 }
 
-.name {
-    position: relative;
-    font-size: 1.25rem;
-    top: -1.25rem;
+.group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    z-index: 1;
 
-    @include media-mixin.media(small) {
-        top: auto;
-        font-size: 3rem;
+    @include media-mixin.min(small-screen) {
+        align-items: baseline;
+        text-align: start;
+        justify-content: space-between;
     }
 }
 
-.job {
+.title {
     position: relative;
-    top: -1.25rem;
-    margin-bottom: -0.75rem;
+    top: -1.5rem;
+    margin-bottom: -1.5rem;
 
-    @include media-mixin.media(small) {
-        color: colors.$secondary;
+    span {
+        font-size: 1.25rem;
+    }
+
+    @include media-mixin.min(small-screen) {
         top: auto;
-        margin-bottom: auto;
+        margin-bottom: 0;
+
+        span {
+            font-size: 1.5rem;
+        }
+    }
+
+    @include media-mixin.min(medium-screen) {
+        span {
+            font-size: 2rem;
+        }
+    }
+
+    @include media-mixin.min(large-screen) {
+        h1 {
+            color: colors.$secondary;
+        }
+
+        span {
+            font-size: 2.5rem;
+        }
+    }
+
+    @include media-mixin.min(extra-large-screen) {
+        span {
+            font-size: 3rem;
+        }
     }
 }
 
 .slogan {
     max-width: 20rem;
-    line-height: 1.5rem;
 
-    @include media-mixin.media(small) {
+    @include media-mixin.min(small-screen) {
         max-width: none;
+    }
+
+    @include media-mixin.min(large-screen) {
         font-size: 1.25rem;
-        margin-bottom: 0.5rem;
+        line-height: 1.5rem;
+
+        p {
+            margin-bottom: 0.5rem;
+        }
     }
 }
 
 .button {
-    margin: 2rem 0 2.5rem 0;
+    margin: 1.5rem 0 2.5rem 0;
+
+    @include media-mixin.min(small-screen) {
+        margin-bottom: 0;
+    }
 }

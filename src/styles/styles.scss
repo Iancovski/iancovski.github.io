@@ -41,14 +41,30 @@ h1 {
     color: colors.$primary;
     padding-bottom: 1rem;
 
-    @include media-mixin.media(extra-small, max) {
+    @include media-mixin.max(large-screen) {
         @include gradient-mixin.text-gradient;
     }
 
-    @include media-mixin.media(small) {
+    @include media-mixin.min(small-screen) {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+
+    @include media-mixin.min(medium-screen) {
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+
+    @include media-mixin.min(large-screen) {
+        font-size: 4rem;
+        line-height: 4.5rem;
+
+        @include gradient-mixin.text-gradient-stroke();
+    }
+
+    @include media-mixin.min(extra-large-screen) {
         font-size: 5rem;
         line-height: 5.5rem;
-        @include gradient-mixin.text-gradient-stroke();
     }
 }
 
